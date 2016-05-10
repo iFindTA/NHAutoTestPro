@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		605DCBF11CE17BEF00A72D13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF01CE17BEF00A72D13 /* main.m */; };
+		605DCBF41CE17BEF00A72D13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF31CE17BEF00A72D13 /* AppDelegate.m */; };
+		605DCBF71CE17BEF00A72D13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF61CE17BEF00A72D13 /* ViewController.m */; };
+		605DCBFA1CE17BEF00A72D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605DCBF81CE17BEF00A72D13 /* Main.storyboard */; };
+		605DCBFC1CE17BEF00A72D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605DCBFB1CE17BEF00A72D13 /* Assets.xcassets */; };
+		605DCBFF1CE17BEF00A72D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605DCBFD1CE17BEF00A72D13 /* LaunchScreen.storyboard */; };
+		605DCC0A1CE17BEF00A72D13 /* NHAutoTestProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCC091CE17BEF00A72D13 /* NHAutoTestProTests.m */; };
+		605DCC151CE17BEF00A72D13 /* NHAutoTestProUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCC141CE17BEF00A72D13 /* NHAutoTestProUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		605DCC061CE17BEF00A72D13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 605DCBE41CE17BEE00A72D13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 605DCBEB1CE17BEF00A72D13;
+			remoteInfo = NHAutoTestPro;
+		};
+		605DCC111CE17BEF00A72D13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 605DCBE41CE17BEE00A72D13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 605DCBEB1CE17BEF00A72D13;
+			remoteInfo = NHAutoTestPro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		605DCBEC1CE17BEF00A72D13 /* NHAutoTestPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NHAutoTestPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		605DCBF01CE17BEF00A72D13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		605DCBF21CE17BEF00A72D13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		605DCBF31CE17BEF00A72D13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		605DCBF51CE17BEF00A72D13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		605DCBF61CE17BEF00A72D13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		605DCBF91CE17BEF00A72D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		605DCBFB1CE17BEF00A72D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		605DCBFE1CE17BEF00A72D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		605DCC001CE17BEF00A72D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		605DCC051CE17BEF00A72D13 /* NHAutoTestProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NHAutoTestProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		605DCC091CE17BEF00A72D13 /* NHAutoTestProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NHAutoTestProTests.m; sourceTree = "<group>"; };
+		605DCC0B1CE17BEF00A72D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		605DCC101CE17BEF00A72D13 /* NHAutoTestProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NHAutoTestProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		605DCC141CE17BEF00A72D13 /* NHAutoTestProUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NHAutoTestProUITests.m; sourceTree = "<group>"; };
+		605DCC161CE17BEF00A72D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		605DCBE91CE17BEF00A72D13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC021CE17BEF00A72D13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC0D1CE17BEF00A72D13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		605DCBE31CE17BEE00A72D13 = {
+			isa = PBXGroup;
+			children = (
+				605DCBEE1CE17BEF00A72D13 /* NHAutoTestPro */,
+				605DCC081CE17BEF00A72D13 /* NHAutoTestProTests */,
+				605DCC131CE17BEF00A72D13 /* NHAutoTestProUITests */,
+				605DCBED1CE17BEF00A72D13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		605DCBED1CE17BEF00A72D13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				605DCBEC1CE17BEF00A72D13 /* NHAutoTestPro.app */,
+				605DCC051CE17BEF00A72D13 /* NHAutoTestProTests.xctest */,
+				605DCC101CE17BEF00A72D13 /* NHAutoTestProUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		605DCBEE1CE17BEF00A72D13 /* NHAutoTestPro */ = {
+			isa = PBXGroup;
+			children = (
+				605DCBF21CE17BEF00A72D13 /* AppDelegate.h */,
+				605DCBF31CE17BEF00A72D13 /* AppDelegate.m */,
+				605DCBF51CE17BEF00A72D13 /* ViewController.h */,
+				605DCBF61CE17BEF00A72D13 /* ViewController.m */,
+				605DCBF81CE17BEF00A72D13 /* Main.storyboard */,
+				605DCBFB1CE17BEF00A72D13 /* Assets.xcassets */,
+				605DCBFD1CE17BEF00A72D13 /* LaunchScreen.storyboard */,
+				605DCC001CE17BEF00A72D13 /* Info.plist */,
+				605DCBEF1CE17BEF00A72D13 /* Supporting Files */,
+			);
+			path = NHAutoTestPro;
+			sourceTree = "<group>";
+		};
+		605DCBEF1CE17BEF00A72D13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				605DCBF01CE17BEF00A72D13 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		605DCC081CE17BEF00A72D13 /* NHAutoTestProTests */ = {
+			isa = PBXGroup;
+			children = (
+				605DCC091CE17BEF00A72D13 /* NHAutoTestProTests.m */,
+				605DCC0B1CE17BEF00A72D13 /* Info.plist */,
+			);
+			path = NHAutoTestProTests;
+			sourceTree = "<group>";
+		};
+		605DCC131CE17BEF00A72D13 /* NHAutoTestProUITests */ = {
+			isa = PBXGroup;
+			children = (
+				605DCC141CE17BEF00A72D13 /* NHAutoTestProUITests.m */,
+				605DCC161CE17BEF00A72D13 /* Info.plist */,
+			);
+			path = NHAutoTestProUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		605DCBEB1CE17BEF00A72D13 /* NHAutoTestPro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605DCC191CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestPro" */;
+			buildPhases = (
+				605DCBE81CE17BEF00A72D13 /* Sources */,
+				605DCBE91CE17BEF00A72D13 /* Frameworks */,
+				605DCBEA1CE17BEF00A72D13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NHAutoTestPro;
+			productName = NHAutoTestPro;
+			productReference = 605DCBEC1CE17BEF00A72D13 /* NHAutoTestPro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		605DCC041CE17BEF00A72D13 /* NHAutoTestProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605DCC1C1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProTests" */;
+			buildPhases = (
+				605DCC011CE17BEF00A72D13 /* Sources */,
+				605DCC021CE17BEF00A72D13 /* Frameworks */,
+				605DCC031CE17BEF00A72D13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				605DCC071CE17BEF00A72D13 /* PBXTargetDependency */,
+			);
+			name = NHAutoTestProTests;
+			productName = NHAutoTestProTests;
+			productReference = 605DCC051CE17BEF00A72D13 /* NHAutoTestProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		605DCC0F1CE17BEF00A72D13 /* NHAutoTestProUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605DCC1F1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProUITests" */;
+			buildPhases = (
+				605DCC0C1CE17BEF00A72D13 /* Sources */,
+				605DCC0D1CE17BEF00A72D13 /* Frameworks */,
+				605DCC0E1CE17BEF00A72D13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				605DCC121CE17BEF00A72D13 /* PBXTargetDependency */,
+			);
+			name = NHAutoTestProUITests;
+			productName = NHAutoTestProUITests;
+			productReference = 605DCC101CE17BEF00A72D13 /* NHAutoTestProUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		605DCBE41CE17BEE00A72D13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "hu jiaju";
+				TargetAttributes = {
+					605DCBEB1CE17BEF00A72D13 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					605DCC041CE17BEF00A72D13 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 605DCBEB1CE17BEF00A72D13;
+					};
+					605DCC0F1CE17BEF00A72D13 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 605DCBEB1CE17BEF00A72D13;
+					};
+				};
+			};
+			buildConfigurationList = 605DCBE71CE17BEE00A72D13 /* Build configuration list for PBXProject "NHAutoTestPro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 605DCBE31CE17BEE00A72D13;
+			productRefGroup = 605DCBED1CE17BEF00A72D13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				605DCBEB1CE17BEF00A72D13 /* NHAutoTestPro */,
+				605DCC041CE17BEF00A72D13 /* NHAutoTestProTests */,
+				605DCC0F1CE17BEF00A72D13 /* NHAutoTestProUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		605DCBEA1CE17BEF00A72D13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605DCBFF1CE17BEF00A72D13 /* LaunchScreen.storyboard in Resources */,
+				605DCBFC1CE17BEF00A72D13 /* Assets.xcassets in Resources */,
+				605DCBFA1CE17BEF00A72D13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC031CE17BEF00A72D13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC0E1CE17BEF00A72D13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		605DCBE81CE17BEF00A72D13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605DCBF71CE17BEF00A72D13 /* ViewController.m in Sources */,
+				605DCBF41CE17BEF00A72D13 /* AppDelegate.m in Sources */,
+				605DCBF11CE17BEF00A72D13 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC011CE17BEF00A72D13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605DCC0A1CE17BEF00A72D13 /* NHAutoTestProTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605DCC0C1CE17BEF00A72D13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605DCC151CE17BEF00A72D13 /* NHAutoTestProUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		605DCC071CE17BEF00A72D13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 605DCBEB1CE17BEF00A72D13 /* NHAutoTestPro */;
+			targetProxy = 605DCC061CE17BEF00A72D13 /* PBXContainerItemProxy */;
+		};
+		605DCC121CE17BEF00A72D13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 605DCBEB1CE17BEF00A72D13 /* NHAutoTestPro */;
+			targetProxy = 605DCC111CE17BEF00A72D13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		605DCBF81CE17BEF00A72D13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				605DCBF91CE17BEF00A72D13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		605DCBFD1CE17BEF00A72D13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				605DCBFE1CE17BEF00A72D13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		605DCC171CE17BEF00A72D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		605DCC181CE17BEF00A72D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		605DCC1A1CE17BEF00A72D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NHAutoTestPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		605DCC1B1CE17BEF00A72D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NHAutoTestPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		605DCC1D1CE17BEF00A72D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NHAutoTestProTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NHAutoTestPro.app/NHAutoTestPro";
+			};
+			name = Debug;
+		};
+		605DCC1E1CE17BEF00A72D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NHAutoTestProTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NHAutoTestPro.app/NHAutoTestPro";
+			};
+			name = Release;
+		};
+		605DCC201CE17BEF00A72D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NHAutoTestProUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NHAutoTestPro;
+			};
+			name = Debug;
+		};
+		605DCC211CE17BEF00A72D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NHAutoTestProUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PullBear.NHAutoTestProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NHAutoTestPro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		605DCBE71CE17BEE00A72D13 /* Build configuration list for PBXProject "NHAutoTestPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605DCC171CE17BEF00A72D13 /* Debug */,
+				605DCC181CE17BEF00A72D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		605DCC191CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605DCC1A1CE17BEF00A72D13 /* Debug */,
+				605DCC1B1CE17BEF00A72D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		605DCC1C1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605DCC1D1CE17BEF00A72D13 /* Debug */,
+				605DCC1E1CE17BEF00A72D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		605DCC1F1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605DCC201CE17BEF00A72D13 /* Debug */,
+				605DCC211CE17BEF00A72D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 605DCBE41CE17BEE00A72D13 /* Project object */;
+}
