@@ -34,8 +34,11 @@ iOS自动化测试、可持续集成的探讨！（Macintosh环境）
 - 源码管理（重点）
 1. 这里终点讨论源码地址为Git的情况（svn或其他的不再讨论）
 2. Git地址简单分为两种：使用Github服务的项目和自己搭建Gitlab服务的项目（并且搭建了ssh棉密码登陆的情况），两种地址简单区分为：
-	a:https://github.com/iFindTA/NHNewsBoardPro.git(默认Github)
-	b:ssh:git@192.168.11.103:33033/home/xxxx.git(默认Gitlab)
+	
+    ```
+    a:https://github.com/iFindTA/NHNewsBoardPro.git (默认Github)
+	b:ssh:git@192.168.11.103:33033/home/xxxx.git    (默认Gitlab)
+```
 
 - - -
 先讨论a情况：
