@@ -80,7 +80,7 @@ $ ssh-keygen -t rsa -C "ack"
 
 如果直接打开/users/用户名下查看是看不到.ssh文件夹的，可以用如下命令显示或隐藏文件夹:
 ```
-chglags hidden xxx
+chflags hidden xxx
 chflags nohidden xxx
 
 ```
