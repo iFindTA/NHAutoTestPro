@@ -33,15 +33,15 @@ iOS自动化测试、可持续集成的探讨！（Macintosh环境）
 
 - 源码管理（重点）
 1. 这里终点讨论源码地址为Git的情况（svn或其他的不再讨论）
-2. Git地址简单分为两种：使用Github服务的项目和自己搭建Gitlab服务的项目（并且搭建了ssh棉密码登陆的情况），两种地址简单区分为：
+2. Git地址简单分为两种：使用Github服务的项目和自己搭建Gitlab服务的项目（并且搭建了ssh棉密码登陆的情况），两种地址简单区分为以下两种情况：
 	
     ```
-    a:https://github.com/iFindTA/NHNewsBoardPro.git (默认Github)
-	b:ssh:git@192.168.11.103:33033/home/xxxx.git    (默认Gitlab)
+    A:https://github.com/iFindTA/NHNewsBoardPro.git (默认Github)
+	B:ssh:git@192.168.11.103:33033/home/xxxx.git    (默认Gitlab)
 ```
 
 - - -
-先讨论a情况：
+先讨论A情况：
 1，直接输入Repository URL
 
 ![image](https://raw.githubusercontent.com/iFindTA/screenshots/master/autoic_7.png)
@@ -52,7 +52,7 @@ iOS自动化测试、可持续集成的探讨！（Macintosh环境）
 
 3，选择 "Username with password" 选项填写然后点击 "Add"即可
 
-再讨论b情况，稍微复杂一点，因为牵涉到ssh，不熟悉的可参考[ssh资料](https://zh.wikipedia.org/wiki/Secure_Shell)
+再讨论B情况，稍微复杂一点，因为牵涉到ssh，不熟悉的可参考[ssh资料](https://zh.wikipedia.org/wiki/Secure_Shell)
 
 ```
 准备工作，假设此时Gitlab搭建人员为你创建了用户:ack 密码：xxx
