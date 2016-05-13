@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "NHADApi.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIImage *bgImg = [UIImage imageNamed:@"ad_bg.png"];
+    UIImage *adImg = [UIImage imageNamed:@"ad.png"];
+    NHADLocation info = {.type = NHADTypeUp, .scale = 0.75};
+    [NHADApi showIn:bgImg withAd:adImg withInfo:info withEvent:^{
+        NSLog(@"ad touched !");
+    }];
     
     CGRect mainSize = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:mainSize];

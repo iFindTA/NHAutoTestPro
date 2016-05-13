@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60074E611CE56340004EF220 /* NHADApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E601CE56340004EF220 /* NHADApi.m */; };
+		60074E661CE57BC0004EF220 /* ad.png in Resources */ = {isa = PBXBuildFile; fileRef = 60074E641CE57BC0004EF220 /* ad.png */; };
+		60074E671CE57BC0004EF220 /* ad_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60074E651CE57BC0004EF220 /* ad_bg.png */; };
 		605DCBF11CE17BEF00A72D13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF01CE17BEF00A72D13 /* main.m */; };
 		605DCBF41CE17BEF00A72D13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF31CE17BEF00A72D13 /* AppDelegate.m */; };
 		605DCBF71CE17BEF00A72D13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605DCBF61CE17BEF00A72D13 /* ViewController.m */; };
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60074E5F1CE56340004EF220 /* NHADApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHADApi.h; sourceTree = "<group>"; };
+		60074E601CE56340004EF220 /* NHADApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHADApi.m; sourceTree = "<group>"; };
+		60074E641CE57BC0004EF220 /* ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad.png; sourceTree = "<group>"; };
+		60074E651CE57BC0004EF220 /* ad_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad_bg.png; sourceTree = "<group>"; };
 		605DCBEC1CE17BEF00A72D13 /* NHAutoTestPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NHAutoTestPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605DCBF01CE17BEF00A72D13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		605DCBF21CE17BEF00A72D13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +85,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60074E5E1CE56309004EF220 /* NHADs */ = {
+			isa = PBXGroup;
+			children = (
+				60074E5F1CE56340004EF220 /* NHADApi.h */,
+				60074E601CE56340004EF220 /* NHADApi.m */,
+			);
+			path = NHADs;
+			sourceTree = "<group>";
+		};
+		60074E621CE57BC0004EF220 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				60074E631CE57BC0004EF220 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		60074E631CE57BC0004EF220 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				60074E641CE57BC0004EF220 /* ad.png */,
+				60074E651CE57BC0004EF220 /* ad_bg.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		605DCBE31CE17BEE00A72D13 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +134,7 @@
 		605DCBEE1CE17BEF00A72D13 /* NHAutoTestPro */ = {
 			isa = PBXGroup;
 			children = (
+				60074E5E1CE56309004EF220 /* NHADs */,
 				605DCBF21CE17BEF00A72D13 /* AppDelegate.h */,
 				605DCBF31CE17BEF00A72D13 /* AppDelegate.m */,
 				605DCBF51CE17BEF00A72D13 /* ViewController.h */,
@@ -117,6 +151,7 @@
 		605DCBEF1CE17BEF00A72D13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60074E621CE57BC0004EF220 /* resources */,
 				605DCBF01CE17BEF00A72D13 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -244,7 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				605DCBFF1CE17BEF00A72D13 /* LaunchScreen.storyboard in Resources */,
+				60074E671CE57BC0004EF220 /* ad_bg.png in Resources */,
 				605DCBFC1CE17BEF00A72D13 /* Assets.xcassets in Resources */,
+				60074E661CE57BC0004EF220 /* ad.png in Resources */,
 				605DCBFA1CE17BEF00A72D13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				605DCBF71CE17BEF00A72D13 /* ViewController.m in Sources */,
+				60074E611CE56340004EF220 /* NHADApi.m in Sources */,
 				605DCBF41CE17BEF00A72D13 /* AppDelegate.m in Sources */,
 				605DCBF11CE17BEF00A72D13 /* main.m in Sources */,
 			);
@@ -500,6 +538,7 @@
 				605DCC1B1CE17BEF00A72D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		605DCC1C1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +547,7 @@
 				605DCC1E1CE17BEF00A72D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		605DCC1F1CE17BEF00A72D13 /* Build configuration list for PBXNativeTarget "NHAutoTestProUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +556,7 @@
 				605DCC211CE17BEF00A72D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
