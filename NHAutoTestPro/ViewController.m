@@ -20,6 +20,7 @@
     self.view.backgroundColor = [UIColor blueColor];
     self.title = @"Auto test";
     
+    
 }
 
 - (void)didReceiveMemoryWarning {

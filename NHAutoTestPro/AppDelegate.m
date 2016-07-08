@@ -35,6 +35,9 @@
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
     
+    listenMainThreadIdleState();
+    [self listenMainRunloopIdle];
+    
     return YES;
 }
 
@@ -58,6 +61,77 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+static void listenMainThreadIdleState() {
+    id handler = ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+                // About to enter the processing loop. Happens
+                // once per `CFRunLoopRun` or `CFRunLoopRunInMode` call
+                break;
+            case kCFRunLoopBeforeTimers:
+            case kCFRunLoopBeforeSources:
+                // Happens before timers or sources are about to be handled
+                break;
+            case kCFRunLoopBeforeWaiting:
+                // All timers and sources are handled and loop is about to go
+                // to sleep. This is most likely what you are looking for :)
+                NSLog(@"main runloop about to sleep");
+                break;
+            case kCFRunLoopAfterWaiting:
+                // About to process a timer or source
+                NSLog(@"main runloop about to process");
+                break;
+            case kCFRunLoopExit:
+                // The `CFRunLoopRun` or `CFRunLoopRunInMode` call is about to
+                // return
+                NSLog(@"main runloop about to exit");
+                break;
+                
+            default:
+                break;
+        }
+    };
+    CFRunLoopObserverRef obs = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, handler);
+    CFRunLoopAddObserver([NSRunLoop mainRunLoop].getCFRunLoop, obs, kCFRunLoopCommonModes);
+    CFRelease(obs);
+}
+
+- (void)listenMainRunloopIdle {
+    
+    id handler = ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+                // About to enter the processing loop. Happens
+                // once per `CFRunLoopRun` or `CFRunLoopRunInMode` call
+                break;
+            case kCFRunLoopBeforeTimers:
+            case kCFRunLoopBeforeSources:
+                // Happens before timers or sources are about to be handled
+                break;
+            case kCFRunLoopBeforeWaiting:
+                // All timers and sources are handled and loop is about to go
+                // to sleep. This is most likely what you are looking for :)
+                NSLog(@"main runloop about to sleep");
+                break;
+            case kCFRunLoopAfterWaiting:
+                // About to process a timer or source
+                NSLog(@"main runloop about to process");
+                break;
+            case kCFRunLoopExit:
+                // The `CFRunLoopRun` or `CFRunLoopRunInMode` call is about to
+                // return
+                NSLog(@"main runloop about to exit");
+                break;
+                
+            default:
+                break;
+        }
+    };
+    CFRunLoopObserverRef obs = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, handler);
+    CFRunLoopAddObserver([NSRunLoop mainRunLoop].getCFRunLoop, obs, kCFRunLoopCommonModes);
+    CFRelease(obs);
 }
 
 @end

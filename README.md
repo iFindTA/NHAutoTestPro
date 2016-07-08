@@ -119,3 +119,10 @@ username填写ack，private key复制粘贴刚才的key 点击"Add"即可验证�
 [GitLab Documentation](http://doc.gitlab.com/ee/integration/jenkins.html)
 [远程shell的执行](http://blog.csdn.net/fireofjava/article/details/40624353)
 
+```
+1,Pods-Targets Support Files-Pods project-Pods~resources.sh-install_resource modify
+2,build settings- product bundle identity
+info.plist & project's bundle idntifier$(PRODUCT_BUNDLE_IDENTIFIER)
+3,Resources Ruls path:$(SDKROOT)/ResourceRules.plist
+```
+
