@@ -124,5 +124,8 @@ username填写ack，private key复制粘贴刚才的key 点击"Add"即可验证�
 2,build settings- product bundle identity
 info.plist & project's bundle idntifier$(PRODUCT_BUNDLE_IDENTIFIER)
 3,Resources Ruls path:$(SDKROOT)/ResourceRules.plist
+
+4,if the file named 'local.properties' was not exist,you can copy it manually
+5,local.properties's sdk.dir should modify into correctly
 ```
 
