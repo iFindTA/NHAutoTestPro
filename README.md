@@ -127,5 +127,11 @@ info.plist & project's bundle idntifier$(PRODUCT_BUNDLE_IDENTIFIER)
 
 4,if the file named 'local.properties' was not exist,you can copy it manually
 5,local.properties's sdk.dir should modify into correctly
+
+--release todo:
+1,net address format normal and ATS settings
+2,product bundle identity
+3,CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
+
 ```
 
