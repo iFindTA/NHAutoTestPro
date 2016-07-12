@@ -124,9 +124,10 @@ username填写ack，private key复制粘贴刚才的key 点击"Add"即可验证�
 2,build settings- product bundle identity
 info.plist & project's bundle idntifier$(PRODUCT_BUNDLE_IDENTIFIER)
 3,Resources Ruls path:$(SDKROOT)/ResourceRules.plist
+4,Code Sign Identity should set rightly
 
-4,if the file named 'local.properties' was not exist,you can copy it manually
-5,local.properties's sdk.dir should modify into correctly
+5,if the file named 'local.properties' was not exist,you can copy it manually
+6,local.properties's sdk.dir should modify into correctly
 
 --release todo:
 1,net address format normal and ATS settings
