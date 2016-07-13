@@ -134,5 +134,11 @@ info.plist & project's bundle idntifier$(PRODUCT_BUNDLE_IDENTIFIER)
 2,product bundle identity
 3,CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
 
+--setting shells
+Poll SCM:H/60 9-21 * * 1-5
+Environment Script plugin:cd ${WORKSPACE}
+echo GIT_CHANGE_LOG=`git log -1 | sed -n '2,$p'`
+
+
 ```
 
