@@ -16,4 +16,7 @@ SHORT_VERSION=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" "$
 BUILD_VERSION=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" "${INFO_PLIST_PATH}")
 DATE="$(date +%Y%m%d%H%M)"
 
+#remove old ipas
+rm -rf ${WORKSPACE}/build/*.ipa
+
 xcrun -sdk iphoneos PackageApplication -v ${WORKSPACE}/build/Release-iphoneos/mihua.app -o ${WORKSPACE}/build/mihua_V${SHORT_VERSION}_B${BUILD_VERSION}_${DATE}.ipa
