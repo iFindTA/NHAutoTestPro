@@ -4,16 +4,18 @@ declare -x SCHEME=$1
 declare -x IS_WORKSPACE=$2
 declare -x IS_DISTRIBUTE=$3
 declare -x CHANNEL='CHANNEL'
-declare -x DESTPATH='./workspace'
-declare -x DEV_PROFILE_NAME=$4
-declare -x DIS_PROFILE_NAME=$5
-declare -x BUNDLE_IDENTITY=$6
+declare -x DESTPATH=$4
+declare -x DEV_PROFILE_NAME=$5
+declare -x DIS_PROFILE_NAME=$6
+declare -x BUNDLE_IDENTITY=$7
+declare -x CONFIGURATION=$8
+declare -x CODE_SIGN_IDENTITY=$9
 
 #channels=('appstore' 'c360' 'wandoujia' 'c91' 'xiaomi')
-channels=${@:7}
+channels=${@:10}
 
 if [ ! -d "$DESTPATH" ]; then
-echo 'no such directory'
+echo 'failed on previous build: no such directory:$(DESTPATH)!'
 exit
 fi
 cd $DESTPATH
@@ -31,7 +33,7 @@ fi
 #build project named SCHEME.xcworkspace
 rm -rf build/
 xcodebuild clean
-xcodebuild -workspace $SCHEME.xcworkspace -scheme $SCHEME -archivePath build/$SCHEME.xcarchive archive PRODUCT_BUNDLE_IDENTIFIER=$BUNDLE_IDENTITY
+xcodebuild -workspace $SCHEME.xcworkspace -scheme $SCHEME -configuration $CONFIGURATION -sdk iphoneos CODE_SIGN_IDENTITY=$"CODE_SIGN_IDENTITY" -archivePath build/$SCHEME.xcarchive archive PRODUCT_BUNDLE_IDENTIFIER=$BUNDLE_IDENTITY
 #xcodebuild -exportArchive -exportFormat ipa -archivePath build/$SCHEME.xcarchive  -exportPath build/$SCHEME.ipa -exportProvisioningProfile $Profile
 
 #generate dsym file
@@ -73,11 +75,16 @@ else
 Profile=$DEV_PROFILE_NAME 
 fi
 #build project named SCHEME.xcodeproj
+rm -rf build/
 xcodebuild clean
-xcodebuild -scheme $SCHEME -archivePath build/$SCHEME.xcarchive archive PRODUCT_BUNDLE_IDENTIFIER=$BUNDLE_IDENTITY
+xcodebuild -scheme $SCHEME -configuration $CONFIGURATION -sdk iphoneos CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" -archivePath build/$SCHEME.xcarchive archive PRODUCT_BUNDLE_IDENTIFIER=$BUNDLE_IDENTITY
 #next step create *.ipa file
 #xcodebuild -exportArchive -exportFormat ipa -archivePath build/$SCHEME.xcarchive -exportPath build/$SCHEME.ipa -exportProvisioningProfile $Profile
 
+#generate dsym file
+rm DSYM
+mkdir DSYM
+zip -r DSYM/$SCHEME.zip $SCHEME.xcarchive/DSYMs/$SCHEME.app.dsym
 
 cd build
 rm ipas
