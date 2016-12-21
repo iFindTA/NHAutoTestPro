@@ -142,3 +142,14 @@ echo GIT_CHANGE_LOG=`git log -1 | sed -n '2,$p'`
 
 ```
 
+###### Common pros
+1,xcode build this project contains no schemes:
+```
+Xcode->manage schemes-> shared
+```
+2,Jenkins unsupported build action 'archive'
+```
+Xcode plugin:
+In your project configuration under "Build" in step "Xcode" under "General build settings" uncheck "Generate Archive"
+make sure your the Scheme is set to Shared and the Scheme Data is commited and pushed as well
+```
