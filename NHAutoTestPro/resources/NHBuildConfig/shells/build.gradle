@@ -32,69 +32,58 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    /*
+    // 通过获取commit提交次数生成version code
+    def getVersionCode = { ->
+        try {
+            def  stdout = new ByteArrayOutputStream()
+            exec {
+                // 返回当前所在分支的提交总数。
+                commandLine 'git', 'rev-list', '--first-parent', '--count', "HEAD"
+                standardOutput = stdout
+            }
 
-task increaseVersionCode << {
-    //println(":incrementVersionCode - Incrementing Version Code...")
-    def manifestFile = file("src/main/AndroidManifest.xml")
-    def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
-    def manifestText = manifestFile.getText()
-    def matcherVersionCode = patternVersionCode.matcher(manifestText)
-    matcherVersionCode.find()
-    def mVersionCode = Integer.parseInt(matcherVersionCode.group(1))
-    def mNextVersionCode = mVersionCode + 1
-    def manifestContent = matcherVersionCode.replaceAll("versionCode=\"" + mNextVersionCode + "\"")
-    println(":incrementVersionCode - current versionCode=" + mVersionCode);
-    println(":incrementVersionCode - next versionCode=" + mNextVersionCode);
-    manifestFile.write(manifestContent)
-}
+            //+300是因为与之前的版本命名区分开，不会与之前的重复
+            println("==================build code!" + Integer.parseInt(stdout.toString().trim()))
+            return Integer.parseInt(stdout.toString().trim())
+        } catch (ignored) {
+            println("==================error code!");
+            return -1;
+        }
+    }
 
-/*
-task incrementVersionName << {
-        println(":incrementVersionName - Incrementing Version Name...")
-        def manifestFile = file("src/main/AndroidManifest.xml")
-        def patternVersionNumber = Pattern.compile("versionName=\"(\\d+)\\.(\\d+)\\.(\\d+)\"")
+    defaultConfig {
+        multiDexEnabled true
+        applicationId = "com.hzflk.mixintong"
+
+        versionCode getVersionCode()
+        versionName "5.0.0"
+    }
+    */
+    //handle build version code
+    def manifestFile = file('AndroidManifest.xml')
+    if (manifestFile.canRead()) {
+        def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
         def manifestText = manifestFile.getText()
-        def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
-        matcherVersionNumber.find()
-        def majorVersion = Integer.parseInt(matcherVersionNumber.group(1))
-        def minorVersion = Integer.parseInt(matcherVersionNumber.group(2))
-        def pointVersion = Integer.parseInt(matcherVersionNumber.group(3))
-        def mVersionName = majorVersion + "." + minorVersion + "." + pointVersion
-        def mNextVersionName = majorVersion + "." + minorVersion + "." + (pointVersion + 1)
-        def manifestContent = matcherVersionNumber.replaceAll("versionName=\"" + mNextVersionName + "\"")
-        println(":incrementVersionName - current versionName=" + mVersionName);
-        println(":incrementVersionName - new versionName=" + mNextVersionName);
+        def matcherVersionCode = patternVersionCode.matcher(manifestText)
+        matcherVersionCode.find()
+        def mVersionCode = Integer.parseInt(matcherVersionCode.group(1))
+        def mNextVersionCode = mVersionCode + 1
+        def manifestContent = matcherVersionCode.replaceAll("versionCode=\"" + mNextVersionCode + "\"")
+        println(":incrementVersionCode - current versionCode=" + mVersionCode);
+        println(":incrementVersionCode - next versionCode=" + mNextVersionCode);
         manifestFile.write(manifestContent)
-}
-*/
+        
+        defaultConfig {
+            multiDexEnabled true
+            applicationId = "com.hzflk.mixintong"
 
-task release << {
-    println(":release - Build and Version Increment")
-}
-
-task debug << {
-    println(":debug - Build")
-}
-
-tasks.whenTaskAdded { task ->
-    if (task.name == 'generateReleaseBuildConfig' || task.name == 'generateDebugBuildConfig') {
-        task.dependsOn 'increaseVersionCode'
-        //task.dependsOn 'incrementVersionName'
+            versionCode mNextVersionCode
+            versionName "5.0.0"
+        }
     }
 }
 
-//incrementVersionName.mustRunAfter build
-//increaseVersionCode.mustRunAfter build
-
-//debug.dependsOn assembleDebug
-// Uncomment if you want to increment the versionCode and/or versionName when using the debug build
-//debug.dependsOn incrementVersionCode
-//debug.dependsOn incrementVersionName
-
-release.dependsOn assembleRelease
-release.dependsOn increaseVersionCode
-//release.dependsOn incrementVersionName
-}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
