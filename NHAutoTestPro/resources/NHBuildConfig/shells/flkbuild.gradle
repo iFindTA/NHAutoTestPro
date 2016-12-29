@@ -1,0 +1,209 @@
+import java.util.regex.Pattern
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.java.net/content/groups/public/"
+        }
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}
+
+dependencies {
+    //    compile(name:'android-pdf-viewer-release', ext:'aar')
+    compile fileTree(include: '*.jar', dir: 'libs')
+    //    compile project(':stickylistheaders:library')
+    //    compile 'com.github.barteksc:android-pdf-viewer:1.3.0'
+    compile(name: 'pulltorefresh_2.1.1', ext: 'aar')
+    compile(name: 'mixin-mail-sdk-1.3.3', ext: 'aar')
+    compile(name: 'cde-sdk-1.0', ext: 'aar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.sun.mail:android-mail:1.5.6'
+    compile 'com.sun.mail:android-activation:1.5.6'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    testCompile 'junit:junit:4.12'
+    apt 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+}
+
+/**
+ * fix bug: java.util.zip.zipexception:duplicate entry colorres.class
+ */
+configurations {
+    all*.exclude group: 'com.android.support', module: 'support-v4'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    useLibrary 'org.apache.http.legacy'
+
+    //handle build version code
+    def manifestFile = file('AndroidManifest.xml')
+    if (manifestFile.canRead()) {
+        def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
+        def manifestText = manifestFile.getText()
+        def matcherVersionCode = patternVersionCode.matcher(manifestText)
+        matcherVersionCode.find()
+        def mVersionCode = Integer.parseInt(matcherVersionCode.group(1))
+        def mNextVersionCode = mVersionCode
+        def homePath = System.getProperties().getProperty("user.home")
+        if (homePath.contains('nanhu')) {
+            mNextVersionCode = mVersionCode + 1
+            def manifestContent = matcherVersionCode.replaceAll("versionCode=\"" + mNextVersionCode + "\"")
+            println(":incrementVersionCode - current versionCode=" + mVersionCode);
+            println(":incrementVersionCode - next versionCode=" + mNextVersionCode);
+            manifestFile.write(manifestContent)
+        }
+
+        defaultConfig {
+            multiDexEnabled true
+            applicationId = "com.hzflk.mixintong"
+
+            versionCode mNextVersionCode
+            versionName "5.0.0"
+        }
+    } else {
+        throw new GradleException("Could not read androidmanifest file !")
+    }
+
+    productFlavors {
+        dev {
+            minSdkVersion 10
+            buildConfigField("String", "UPDATE_URL", "\"versions/dev/android\"")
+            buildConfigField("int", "UPDATE_CURRENT_VERSION", String.format("%d", defaultConfig.versionCode))
+        }
+
+        prod {
+            minSdkVersion 10
+            buildConfigField("String", "UPDATE_URL", "\"versions/prod/android\"")
+            buildConfigField("int", "UPDATE_CURRENT_VERSION", "\"500\"")
+        }
+    }
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "3G"
+        incremental true
+    }
+    /*
+    // 通过获取commit提交次数生成version code
+    def getVersionCode = { ->
+        try {
+            def  stdout = new ByteArrayOutputStream()
+            exec {
+                // 返回当前所在分支的提交总数。
+                commandLine 'git', 'rev-list', '--first-parent', '--count', "HEAD"
+                standardOutput = stdout
+            }
+
+            println("==================error code!" + Integer.parseInt(stdout.toString().trim()))
+            return Integer.parseInt(stdout.toString().trim())
+        } catch (ignored) {
+            println("==================error code!");
+            return -1;
+        }
+    }
+    */
+
+    signingConfigs { //gradle assembleRelease
+        release {
+            storeFile file('sign/flk.keystore')
+            storePassword "comlinkjane"
+            keyAlias "ssmszjyd"
+            keyPassword "comlinkjane"
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/INDEX.LIST'
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src', '.apt_generated']
+            resources.srcDirs = ['src', '.apt_generated']
+            aidl.srcDirs = ['src', '.apt_generated']
+            renderscript.srcDirs = ['src', '.apt_generated']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (variant.buildType.name.equals('release')) {
+                output.outputFile = new File("MXT_Android_V" + defaultConfig.versionName + "_Build" +
+                    defaultConfig.versionCode + ".apk" );
+            }
+        }
+    }
+}
+
+apt {
+    arguments {
+        eventBusIndex "com.mobile2safe.ssms.SSMSEventBusIndex"
+    }
+}
