@@ -14,7 +14,7 @@ var xmlRwiter = require('xml-writer');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser(),
 		xmlBuilder = new xml2js.Builder();
-var host = '127.0.0.1';
+var host = '0.0.0.0';
 var port = 9527;
 /*
 //restful api
